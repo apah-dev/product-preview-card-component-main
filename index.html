@@ -30,6 +30,11 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+
+      :root {
+        --cyan: hsl(158, 36%, 37%);
+        --cream: hsl(30, 38%, 92%);
+      }
       * {
         box-sizing: border-box;
         padding: 0;
@@ -44,6 +49,8 @@
         justify-content: center;
         /* font-family: "Montserrat", sans-serif; */
         font-family: "Fraunces", serif;
+        background-color: var(--cream);
+        font-size: 14px;
       }
 
       main {
@@ -52,15 +59,61 @@
         justify-content: center;
         width: 500px;
       }
+
+      .productimage {
+        width: 50%;
+      }
       img {
         width: 100%;
       }
 
       .description {
-        margin-left: 20px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
+        background-color: white;
+        width: 50%;
       }
+
+      .description h3 {
+        font-weight: 400;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .description h1,
+      p,
+      button,
+      h2 {
+        margin-top: 15px;
+      }
+
+      .description h2 {
+        color: var(--cyan);
+        font-size: 2rem;
+      }
+
+      .description h2 span {
+        color: black;
+        font-size: 0.5rem;
+      }
+
+      .description button {
+        background-color: var(--cyan);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: none;
+      }
+
+      .description button img {
+        width: 1rem;
+        margin-right: 10px;
+      }
+
       .attribution {
         font-size: 11px;
         text-align: center;
@@ -76,15 +129,15 @@
         <img src="images/image-product-desktop.jpg" />
       </div>
       <div class="description">
-        <h3>Prefume</h3>
+        <h3>PERFUME</h3>
         <h1>Gabrielle Essence Eau De Parfum</h1>
         <p>
           A floral, solar and voluptuous interpretation composed by Olivier
           Polge, Perfumer-Creator for the House of CHANEL.
         </p>
 
-        <h2>$149.99 $169.99</h2>
-        <button><a href="#"> Add to Cart </a></button>
+        <h2>$149.99 <span>$169.99</span></h2>
+        <button><img src="images/icon-cart.svg" />Add to Cart</button>
       </div>
     </main>
 
@@ -93,7 +146,7 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Apah Benson</a>.
       </div>
     </footer>
   </body>
