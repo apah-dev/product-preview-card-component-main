@@ -30,14 +30,14 @@ main {
 }
 
 .productimage {
-  width: 50%;
+  max-width: 50%;
   border-radius: 20px;
 }
 img {
   width: 100%;
-  height: 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  object-fit: cover;
 }
 
 .description {
@@ -115,14 +115,30 @@ p {
     align-items: center;
     margin: 0;
     padding: 0;
+    padding: 20px;
     /* aspect-ratio: 1/1; */
   }
 
   .productimage {
     width: 100%;
+    min-width: fit-content;
+    min-height: fit-content;
+
   }
+
+  .productimage img {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 0px;
+  }
+
 
   .description {
     width: 100%;
+
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    margin-top: -5px;
   }
 }
