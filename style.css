@@ -1,0 +1,178 @@
+        /*
+    1. Use a more-intuitive box-sizing model.
+    */
+    *, *::before, *::after {  
+      box-sizing: border-box;
+    }
+
+    /*
+    2. Remove default margin
+    */
+    * {
+      margin: 0;
+      }
+
+    /*
+    3. Allow percentage-based heights in the application
+    */
+    html, body {
+      height: 100%;
+    }
+
+    /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+    And desired font-family
+    */
+    body {  
+      line-height: 1.5;
+      margin: 0 auto;
+      background: var(--Cream);
+      display: grid;
+      place-content: center;
+      margin: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /*
+    6. Improve media defaults
+    */
+    img, picture, video, canvas, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /*
+    7. Remove built-in form typography styles
+    */
+    input, button, textarea, select {
+      font: inherit;
+    }
+
+    /*
+    8. Avoid text overflows
+    */
+    p, h1, h2, h3, h4, h5, h6 {
+      overflow-wrap: break-word;
+    }
+
+    /*
+    9. Create a root stacking context
+    */
+
+    :root {
+      --fraunces: 'Fraunces', serif;
+      --montserrat: 'Montserrat', sans-serif;
+      --Darkcyan: hsl(158, 36%, 37%);
+      --VeryDarkcyan: hsl(157, 37%, 19%);
+      --Cream: hsl(30, 38%, 92%);
+      --Verydarkblue: hsl(212, 21%, 14%);
+      --Darkgrayishblue: hsl(228, 12%, 48%);
+      --White: hsl(0, 0%, 100%);
+      --pfontsize: 14px;
+    }
+
+    main {
+      /* background: var(--White); */
+      width: 100%;
+
+    }
+    .product-card{
+      display: grid;
+      background: var(--White);
+      border-radius: .5em;
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+
+    .product-content {
+      padding: 1rem 1rem;
+      display: grid;
+      gap: .5em;
+      background-color: var(--White);
+    }
+
+    .product-category, .product-description, .product-oldprice {
+      color: var(--Darkgrayishblue);
+    }
+
+    .product-category {
+      letter-spacing: .5em;
+      font-size: .5rem;
+      font-family: var(--montserrat);
+    }
+
+    .product-title {
+      font-family: var(--fraunces);
+      font-size: 1.5em;
+      line-height: 1;
+    }
+
+    .product-description {
+      font-size: .6em;
+      font-family: var(--montserrat);
+      width: 100%;
+      max-width: 230px;
+    }
+
+    .product-price {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+      font-family: var(--fraunces);
+    }
+
+    .product-newprice {
+      color: var(--Darkcyan);
+      font-size: 1.5em;
+    }
+
+    .product-oldprice {
+      text-decoration: line-through;
+      font-family: var(--montserrat);
+      font-size: .5em;
+    }
+
+    .add-to-cart {
+      text-align: center;
+      background: var(--Darkcyan);
+      border-style: none;
+      color: var(--White);
+      font-family: var(--montserrat);
+      font-size: .7em;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+      padding: .6rem;
+      border-radius: .3rem;
+      cursor: pointer;
+    }
+
+    .add-to-cart:is(:hover, :focus) {
+      background: var(--VeryDarkcyan);
+    }
+
+    .add-to-cart[data-icon="shopping-cart"]::before {
+      content: "";
+      background-image: url(images/icon-cart.svg);
+      width: 15px;
+      height: 16px;
+    }
+
+    /* .cart-icon {
+      width: 100%;
+      max-width: 1rem;
+    } */
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+    @media (min-width: 600px){
+      .product-card {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
